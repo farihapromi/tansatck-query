@@ -1,7 +1,13 @@
 import React from 'react';
 
 const MainLayout = () => {
-  return <div></div>;
+  return (
+    <>
+      <Header />
+      <Outler />
+      <Footer />
+    </>
+  );
 };
 
 export default MainLayout;
