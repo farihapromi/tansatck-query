@@ -3,6 +3,7 @@ import MainLayout from './components/Layout/MainLayout';
 import Home from './Pages/Home';
 import FetchOld from './Pages/FetchOld';
 import FetchRQ from './Pages/FetchRQ';
+import { RouterProvider } from 'react-router-dom';
 // Create a router
 const router = createBrowserRouter([
   {
@@ -34,6 +35,7 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-  return <h1>Tanstack Query</h1>;
+  return;
+  <RouterProvider router={router}></RouterProvider>;
 };
 export default App;
