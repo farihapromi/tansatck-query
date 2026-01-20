@@ -3,7 +3,7 @@ import MainLayout from './components/Layout/MainLayout';
 import Home from './Pages/Home';
 import FetchOld from './Pages/FetchOld';
 import FetchRQ from './Pages/FetchRQ';
-import { RouterProvider } from 'react-router-dom';
+import './App.css';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 // Create a router
 const router = createBrowserRouter([
@@ -23,14 +23,14 @@ const router = createBrowserRouter([
         path: '/rq',
         element: <FetchRQ />,
       },
-      {
-        path: '/rq/:id',
-        element: <FetchIndv />,
-      },
-      {
-        path: '/infinite',
-        element: <InfiniteScroll />,
-      },
+      // {
+      //   path: '/rq/:id',
+      //   element: <FetchIndv />,
+      // },
+      // {
+      //   path: '/infinite',
+      //   element: <InfiniteScroll />,
+      // },
     ],
   },
 ]);
