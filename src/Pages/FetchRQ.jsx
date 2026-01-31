@@ -6,21 +6,34 @@ const FetchRQ = () => {
   const getPostsData = async () => {
     try {
       const res = await fetchPosts();
-      console.log(res);
-      res.status === 200 ? res.data : [];
+      return res.data;
     } catch (error) {
-      console.log(error);
+      console.error(error);
       return [];
     }
   };
-  const { data } = useQuery({
-    queryyKey: ['posts'],
-    queryFn: getPostsData(),
+
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ['posts'],
+    queryFn: getPostsData,
   });
+
+  if (isLoading) return <p>Loading...</p>;
+  if (isError) return <p>Error fetching posts</p>;
 
   return (
     <div>
-      <h1>This is fethrq</h1>
+      <ul className='section-accordion'>
+        {data?.map((curElem) => {
+          const { id, title, body } = curElem;
+          return (
+            <li key={id}>
+              <p>{title}</p>
+              <p>{body}</p>
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 };
